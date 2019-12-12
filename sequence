@@ -8,11 +8,20 @@ note left of WorkOrderResource.getFsrWorkOrders:fsrId, date as params
 
 WorkOrderService.getFsrWorkOrders-->getOtherWorkOrdersForFSR:
 note left of getOtherWorkOrdersForFSR:fsrId as params
+note right of getOtherWorkOrdersForFSR: List<workOtherOrders> as return type
 
-WorkOrderService.getFsrWorkOrders-->addEquipmentsToWorkOrders:
-WorkOrderService.getFsrWorkOrders-->updateInTruckForWorkOrders:
+
+
 WorkOrderService.getFsrWorkOrders->WorkOrderDao.getFsrWorkOrders: 
 note left of WorkOrderDao.getFsrWorkOrders:fsrId as params
+note right of WorkOrderDao.getFsrWorkOrders:List<workOtherOrders> to return 
+note right of WorkOrderDao.getFsrWorkOrders:Add to List<WorkOrders> to return 
+
+
+
+note over WorkOrderService.getFsrWorkOrders:Add Equipments To WorkOrders
+note over WorkOrderService.getFsrWorkOrders:Update In TruckFor Work Orders
+
 
 WorkOrderDao.getFsrWorkOrders-->WorkOrderResource.getFsrWorkOrders: List<WorkOrder> listWorkOrders
-note left of WorkOrderResource.getFsrWorkOrders:List<WorkOrder> listWorkOrders
+note left of WorkOrderResource.getFsrWorkOrders: List<WorkOrder> listWorkOrders
