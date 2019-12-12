@@ -14,13 +14,14 @@ note right of getOtherWorkOrdersForFSR: List<workOtherOrders> as return type
 
 WorkOrderService.getFsrWorkOrders->WorkOrderDao.getFsrWorkOrders: 
 note left of WorkOrderDao.getFsrWorkOrders:fsrId as params
-WorkOrderDao.getFsrWorkOrders->WorkOrderDao.getFsrWorkOrders: Add List<workOtherOrders> to List<workOrders>
 
 
-note left of WorkOrderDao.getFsrWorkOrders
-   addEquipmentsToWorkOrders(workOrders)
-    updateInTruckForWorkOrders(workOrders)
-end note
+
+
+note over WorkOrderService.getFsrWorkOrders:Add Equipments To WorkOrders
+note right of WorkOrderDao.getFsrWorkOrders:List<workOtherOrders> to List<WorkOrders> 
+note over WorkOrderService.getFsrWorkOrders:Update In TruckFor Work Orders
+
 
 WorkOrderDao.getFsrWorkOrders-->WorkOrderResource.getFsrWorkOrders: List<WorkOrder> listWorkOrders
 note left of WorkOrderResource.getFsrWorkOrders: List<WorkOrder> listWorkOrders
