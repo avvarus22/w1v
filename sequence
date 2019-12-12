@@ -1,0 +1,18 @@
+title GET_WORK_ORDERS_FSR_ID(Get list of all WO by FSR ID)
+
+
+
+WorkOrderResource.getFsrWorkOrders->WorkOrderService.getFsrWorkOrders:
+note left of WorkOrderResource.getFsrWorkOrders:fsrId, date as params
+
+
+WorkOrderService.getFsrWorkOrders-->getOtherWorkOrdersForFSR:
+note left of getOtherWorkOrdersForFSR:fsrId as params
+
+WorkOrderService.getFsrWorkOrders-->addEquipmentsToWorkOrders:
+WorkOrderService.getFsrWorkOrders-->updateInTruckForWorkOrders:
+WorkOrderService.getFsrWorkOrders->WorkOrderDao.getFsrWorkOrders: 
+note left of WorkOrderDao.getFsrWorkOrders:fsrId as params
+
+WorkOrderDao.getFsrWorkOrders-->WorkOrderResource.getFsrWorkOrders: List<WorkOrder> listWorkOrders
+note left of WorkOrderResource.getFsrWorkOrders:List<WorkOrder> listWorkOrders
