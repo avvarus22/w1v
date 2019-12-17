@@ -1,0 +1,10 @@
+title GET_AMWATER_OUTAGES(Get list of AMWATER OUTAGES)
+
+
+
+WorkOrderResource.getAmwaterOutages->WorkOrderService.getAmwaterOutages:
+WorkOrderService.getAmwaterOutages->WorkOrderDao.getAmwaterOutages: 
+WorkOrderDao.getAmwaterOutages--> WorkOrderService.getAmwaterOutages: List<List<String>> outageLocationCordinates
+
+WorkOrderService.getAmwaterOutages--> WorkOrderResource.getAmwaterOutages: List<List<String>> outageLocationCordinates
+
