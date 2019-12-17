@@ -1,0 +1,17 @@
+title GET_NOTIFICATIONS(Get list of Notifications)
+
+
+
+entryspacing 0.9
+WorkOrderResource.getNotifications->WorkOrderService.getNotifications:
+note left of WorkOrderResource.getNotifications: Integer recipientId as input param
+
+WorkOrderService.getNotifications->WorkOrderDao.getNotifications: 
+note left of WorkOrderService.getNotifications: Integer recipientId as input param
+
+
+note right of WorkOrderDao.getNotifications: sql query is fsrShiftHours
+WorkOrderDao.getNotifications->WorkOrderDao.getNotifications: Create a list workOrderNotifications by recipientId and fsrShiftHours
+
+WorkOrderDao.getNotifications-->WorkOrderResource.getNotifications: List<WorkOrderNotification> workOrderNotifications
+
