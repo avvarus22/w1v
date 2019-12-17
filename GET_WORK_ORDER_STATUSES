@@ -1,0 +1,17 @@
+title GET_WORK_ORDER_STATUSES(Get list of Work Order Statuses)
+
+
+
+entryspacing 0.9
+WorkOrderResource.getWorkOrderStatuses->WorkOrderService.getWorkOrderStatuses:
+note left of WorkOrderResource.getWorkOrderStatuses: No input parameter
+
+WorkOrderService.getWorkOrderStatuses->WorkOrderDao.getWorkOrderStatuses: 
+note left of WorkOrderService.getWorkOrderStatuses: No input parameter
+
+
+note right of WorkOrderDao.getWorkOrderStatuses: sql query is selectWorkOrderStatuses
+WorkOrderDao.getWorkOrderStatuses->WorkOrderDao.getWorkOrderStatuses: Create a list WorkOrderStatusDO with code and value 
+
+WorkOrderDao.getWorkOrderStatuses-->WorkOrderResource.getWorkOrderStatuses: List<WorkOrderStatusDO> workOrderStatusDO
+
